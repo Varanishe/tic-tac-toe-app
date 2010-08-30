@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Tic Tac Toe</string>
+	<string name="main_title">Tic Tac Toe</string>
+	<string name="continue_label">Continue</string>
+	<string name="new_game_label">New Game</string>
+	
+	<string name="options_label">Options</string>
+	<string name="easy_label">Easy</string>
+	<string name="medium_label">Medium</string>
+	<string name="hard_label">Hard</string>
+	
+	<string name="message_title">Message</string>
+	<string name="draw_game">Draw!</string>
+	<string name="nought_win_game">Nought win!</string>
+	<string name="cross_win_game">Cross win!</string>
+	
+	<string name="about_label">About</string>
+	<string name="about_title">About Tic Tac Toe</string>
+	<string name="about_text">This version of the popular game <b>Tic Tac Toe</b> for Android lets you test your skills against the wits of the robot. Put three <b>X</b>-marks in a line horizontally, vertically, or diagonally before the computer can line up three <b>O</b>-marks and you win.
+	</string>
+
+</resources>
