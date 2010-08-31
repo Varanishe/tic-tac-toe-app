@@ -19,13 +19,13 @@ public class TicTacToeModel {
 	public static final int NOUGHT = 1;
 	public static final int CROSS = 2;
 
-	public static final int STATE_NONE = 4;
-	public static final int STATE_DRAW = 5;
-	public static final int STATE_WIN = 6;
+	public static final int STATE_NONE = 3;
+	public static final int STATE_DRAW = 4;
+	public static final int STATE_WIN = 5;
 
-	public static final int EASY_DIF = 7;
-	public static final int MEDIUM_DIF = 8;
-	public static final int HARD_DIF = 9;
+	public static final int EASY_DIF = 6;
+	public static final int MEDIUM_DIF = 7;
+	public static final int HARD_DIF = 8;
 
 	private static int[][] gameField = new int[3][3];
 
@@ -62,31 +62,192 @@ public class TicTacToeModel {
 		return isDraw;
 	}
 
-	private void doSmartMove() {
+	private boolean doWinOrBlockMove(int element) {
+		/* horizontal 1st line*/
+		if (gameField[0][0] == EMPTY && gameField[0][1] == element && gameField[0][2] == element) {
+			gameField[0][0] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][0] == element && gameField[0][1] == EMPTY && gameField[0][2] == element) {
+			gameField[0][1] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][0] == element && gameField[0][1] == element && gameField[0][2] == EMPTY) {
+			gameField[0][2] = NOUGHT;
+			return true;
+		}
+		/* horizontal 2nd line*/
+		if (gameField[1][0] == EMPTY && gameField[1][1] == element && gameField[1][2] == element) {
+			gameField[1][0] = NOUGHT;
+			return true;
+		}
+		if (gameField[1][0] == element && gameField[1][1] == EMPTY && gameField[1][2] == element) {
+			gameField[1][1] = NOUGHT;
+			return true;
+		}
+		if (gameField[1][0] == element && gameField[1][1] == element && gameField[1][2] == EMPTY) {
+			gameField[1][2] = NOUGHT;
+			return true;
+		}
+		/* horizontal 3rd line*/
+		if (gameField[2][0] == EMPTY && gameField[2][1] == element && gameField[2][2] == element) {
+			gameField[2][0] = NOUGHT;
+			return true;
+		}
+		if (gameField[2][0] == element && gameField[2][1] == EMPTY && gameField[2][2] == element) {
+			gameField[2][1] = NOUGHT;
+			return true;
+		}
+		if (gameField[2][0] == element && gameField[2][1] == element && gameField[2][2] == EMPTY) {
+			gameField[2][2] = NOUGHT;
+			return true;
+		}
+		
+		/* vertical 1st line*/
+		if (gameField[0][0] == EMPTY && gameField[1][0] == element && gameField[2][0] == element) {
+			gameField[0][0] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][0] == element && gameField[1][0] == EMPTY && gameField[2][0] == element) {
+			gameField[1][0] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][0] == element && gameField[1][0] == element && gameField[2][0] == EMPTY) {
+			gameField[2][0] = NOUGHT;
+			return true;
+		}
+		/* vertical 2nd line*/
+		if (gameField[0][1] == EMPTY && gameField[1][1] == element && gameField[2][1] == element) {
+			gameField[0][1] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][1] == element && gameField[1][1] == EMPTY && gameField[2][1] == element) {
+			gameField[1][1] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][1] == element && gameField[1][1] == element && gameField[2][1] == EMPTY) {
+			gameField[2][1] = NOUGHT;
+			return true;
+		}
+		/* vertical 3rd line*/
+		if (gameField[0][2] == EMPTY && gameField[1][2] == element && gameField[2][2] == element) {
+			gameField[0][2] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][2] == element && gameField[1][2] == EMPTY && gameField[2][2] == element) {
+			gameField[1][2] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][2] == element && gameField[1][2] == element && gameField[2][2] == EMPTY) {
+			gameField[2][2] = NOUGHT;
+			return true;
+		}
+		
+		/* 1st diagonal */
+		if (gameField[0][0] == EMPTY && gameField[1][1] == element && gameField[2][2] == element) {
+			gameField[0][0] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][0] == element && gameField[1][1] == EMPTY && gameField[2][2] == element) {
+			gameField[1][1] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][0] == element && gameField[1][1] == element && gameField[2][2] == EMPTY) {
+			gameField[2][2] = NOUGHT;
+			return true;
+		}
+		/* 2nd diagonal */
+		if (gameField[0][2] == EMPTY && gameField[1][1] == element && gameField[2][0] == element) {
+			gameField[0][2] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][2] == element && gameField[1][1] == EMPTY && gameField[2][0] == element) {
+			gameField[1][1] = NOUGHT;
+			return true;
+		}
+		if (gameField[0][2] == element && gameField[1][1] == element && gameField[2][0] == EMPTY) {
+			gameField[2][0] = NOUGHT;
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean isDoneWinMove() {
+		return doWinOrBlockMove(NOUGHT);
+	}
 
+	private boolean isDoneBlockMove() {
+		return doWinOrBlockMove(CROSS);
+	}
+
+	private int doOptimalMove() {
+		if (gameField[1][1] == EMPTY) { 
+			gameField[1][1] = NOUGHT;
+			return 0;
+		} else {
+			/* check corner */
+			if (gameField[0][0] == EMPTY) {
+				gameField[0][0] = NOUGHT;
+				return 0;
+			}
+			if (gameField[0][2] == EMPTY) {
+				gameField[0][2] = NOUGHT;
+				return 0;
+			}
+			if (gameField[2][0] == EMPTY) {
+				gameField[2][0] = NOUGHT;
+				return 0;
+			}
+			if (gameField[2][2] == EMPTY) {
+				gameField[2][2] = NOUGHT;
+				return 0;
+			}
+			/* check middles */
+			if (gameField[0][1] == EMPTY) {
+				gameField[0][1] = NOUGHT;
+				return 0;
+			}
+			if (gameField[1][2] == EMPTY) {
+				gameField[1][2] = NOUGHT;
+				return 0;
+			}
+			if (gameField[1][0] == EMPTY) {
+				gameField[1][0] = NOUGHT;
+				return 0;
+			}
+			if (gameField[2][1] == EMPTY) {
+				gameField[2][1] = NOUGHT;
+				return 0;
+			}
+		}
+		return 0;
+	}
+
+	private void doSmartMove() {
+		if (!isDoneWinMove())
+			if (!isDoneBlockMove())
+				doOptimalMove();
 	}
 
 	private void doStupidMove() {
 		int emptyCells = 0;
 		for (int x = 0; x < 3; x++) {
 			for (int y = 0; y < 3; y++) {
-				if (gameField[x][y] == EMPTY) 
+				if (gameField[x][y] == EMPTY)
 					emptyCells++;
 			}
-		}
-		
+		} 
+
 		if (emptyCells > 0) {
 			int numberOfCell = new Random().nextInt(emptyCells) + 1;
 			emptyCells = 0;
-			for (int x = 0; x < 3 && emptyCells < numberOfCell; x++) {
-				for (int y = 0; y < 3 && emptyCells < numberOfCell; y++) {
+			for (int x = 0; x < 3 && emptyCells < numberOfCell; x++) 
+				for (int y = 0; y < 3 && emptyCells < numberOfCell; y++) 
 					if (gameField[x][y] == EMPTY) {
 						emptyCells++;
 						if (numberOfCell == emptyCells)
 							gameField[x][y] = NOUGHT;
 					}
-				}
-			}
 		}
 	}
 
