@@ -76,13 +76,13 @@ public class TicTacToeModel {
 		}
 		
 		if (emptyCells > 0) {
-			int numberCell = new Random().nextInt(emptyCells) + 1;
+			int numberOfCell = new Random().nextInt(emptyCells) + 1;
 			emptyCells = 0;
-			for (int x = 0; x < 3 && emptyCells < numberCell; x++) {
-				for (int y = 0; y < 3 && emptyCells < numberCell; y++) {
+			for (int x = 0; x < 3 && emptyCells < numberOfCell; x++) {
+				for (int y = 0; y < 3 && emptyCells < numberOfCell; y++) {
 					if (gameField[x][y] == EMPTY) {
 						emptyCells++;
-						if (numberCell == emptyCells)
+						if (numberOfCell == emptyCells)
 							gameField[x][y] = NOUGHT;
 					}
 				}
