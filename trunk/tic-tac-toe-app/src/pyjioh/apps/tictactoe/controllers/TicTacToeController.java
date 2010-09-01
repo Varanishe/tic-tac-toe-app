@@ -22,9 +22,9 @@ public class TicTacToeController {
 	private Button[] buttons;
 
 	private void drawButton(Button btn, int state) {
-		if (state == TicTacToeModel.NOUGHT)
+		if ( TicTacToeModel.NOUGHT == state)
 			btn.setBackgroundResource(R.drawable.o_96);
-		else if (state == TicTacToeModel.CROSS)
+		else if (TicTacToeModel.CROSS == state)
 			btn.setBackgroundResource(R.drawable.x_96);
 		else
 			btn.setBackgroundResource(R.drawable.clear);
