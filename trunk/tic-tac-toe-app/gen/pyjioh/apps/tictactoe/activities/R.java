@@ -12,18 +12,21 @@ public final class R {
     }
     public static final class color {
         public static final int background=0x7f040000;
+        public static final int text_droid=0x7f040001;
+        public static final int text_human=0x7f040002;
     }
     public static final class drawable {
         public static final int clear=0x7f020000;
-        public static final int icon=0x7f020001;
-        public static final int o_250=0x7f020002;
-        public static final int o_96=0x7f020003;
-        public static final int x_250=0x7f020004;
-        public static final int x_96=0x7f020005;
-        public static final int xo_250=0x7f020006;
+        public static final int human_vs_droid=0x7f020001;
+        public static final int icon=0x7f020002;
+        public static final int o_250=0x7f020003;
+        public static final int o_96=0x7f020004;
+        public static final int x_250=0x7f020005;
+        public static final int x_96=0x7f020006;
+        public static final int xo_250=0x7f020007;
     }
     public static final class id {
-        public static final int about_button=0x7f060011;
+        public static final int about_button=0x7f060015;
         public static final int about_content=0x7f060000;
         public static final int button_11=0x7f060003;
         public static final int button_12=0x7f060004;
@@ -35,15 +38,19 @@ public final class R {
         public static final int button_32=0x7f06000c;
         public static final int button_33=0x7f06000d;
         public static final int buttons=0x7f060001;
-        public static final int continue_button=0x7f06000e;
-        public static final int easy_radiobutton=0x7f060012;
-        public static final int hard_radiobutton=0x7f060014;
-        public static final int medium_radiobutton=0x7f060013;
-        public static final int new_game_button=0x7f06000f;
-        public static final int options_button=0x7f060010;
+        public static final int continue_button=0x7f060012;
+        public static final int droid_score=0x7f060011;
+        public static final int easy_radiobutton=0x7f060016;
+        public static final int hard_radiobutton=0x7f060018;
+        public static final int human_score=0x7f06000f;
+        public static final int human_vs_droid=0x7f060010;
+        public static final int medium_radiobutton=0x7f060017;
+        public static final int new_game_button=0x7f060013;
+        public static final int options_button=0x7f060014;
         public static final int row1=0x7f060002;
         public static final int row2=0x7f060006;
         public static final int row3=0x7f06000a;
+        public static final int row_bottom=0x7f06000e;
     }
     public static final class layout {
         public static final int about=0x7f030000;

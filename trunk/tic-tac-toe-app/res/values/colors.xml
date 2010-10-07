@@ -9,4 +9,6 @@
 -->
 <resources>
    <color name="background">#002761</color>
+   <color name="text_droid">#ffd4f5</color>
+   <color name="text_human">#d4daff</color>
 </resources>

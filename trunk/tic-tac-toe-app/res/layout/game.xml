@@ -3,30 +3,59 @@
 	android:id="@+id/buttons" android:background="@color/background">
 
 	<TableRow android:id="@+id/row1" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:layout_marginBottom="1dip" android:layout_marginLeft="1dip" android:layout_marginRight="1dip">
+		android:layout_height="wrap_content" android:layout_marginLeft="1dip"
+		android:layout_marginRight="1dip" android:layout_marginBottom="2dip">
 		<Button android:text="" android:id="@+id/button_11"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1dip" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear" android:layout_marginRight="2dip"
+			android:layout_marginLeft="12dip"></Button>
 		<Button android:text="" android:id="@+id/button_12"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1dip" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear" android:layout_marginRight="2dip"></Button>
 		<Button android:text="" android:id="@+id/button_13"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear"></Button>
 	</TableRow>
 	<TableRow android:id="@+id/row2" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:layout_marginBottom="1dip" android:layout_marginLeft="1dip" android:layout_marginRight="1dip">
+		android:layout_height="wrap_content" android:layout_marginLeft="1dip"
+		android:layout_marginRight="1dip" android:layout_marginBottom="2dip">
 		<Button android:text="" android:id="@+id/button_21"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1dip" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear" android:layout_marginRight="2dip"
+			android:layout_marginLeft="12dip"></Button>
 		<Button android:text="" android:id="@+id/button_22"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1dip" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginRight="2dip" android:background="@drawable/clear"></Button>
 		<Button android:text="" android:id="@+id/button_23"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear"></Button>
 	</TableRow>
 	<TableRow android:id="@+id/row3" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:layout_marginLeft="1dip" android:layout_marginRight="1dip" android:layout_marginBottom="1dip">
+		android:layout_height="wrap_content" android:layout_marginLeft="1dip"
+		android:layout_marginRight="1dip" android:layout_marginBottom="1dip">
 		<Button android:text="" android:id="@+id/button_31"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1dip" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear" android:layout_marginRight="2dip"
+			android:layout_marginLeft="12dip"></Button>
 		<Button android:text="" android:id="@+id/button_32"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1dip" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear" android:layout_marginRight="2dip"></Button>
 		<Button android:text="" android:id="@+id/button_33"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/clear"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/clear"></Button>
+	</TableRow>
+	<TableRow android:id="@+id/row_bottom" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_marginBottom="1dip"
+		android:layout_marginRight="1dip" android:layout_marginTop="5dip">
+		<TextView android:id="@+id/human_score" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_gravity="bottom" android:gravity="right" android:text="0" android:layout_marginLeft="1dip" android:layout_marginRight="10dip" android:textColor="@color/text_human" android:textSize="78sp">
+		</TextView>
+		<ImageView android:id="@+id/human_vs_droid"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:src="@drawable/human_vs_droid">
+		</ImageView>
+		<TextView android:id="@+id/droid_score" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_gravity="bottom" android:text="0" android:layout_marginLeft="10dip" android:textColor="@color/text_droid" android:textSize="78sp">
+		</TextView>
 	</TableRow>
 </TableLayout>
