@@ -33,7 +33,6 @@ public class Game extends Activity implements OnClickListener {
 		for (Button btn : buttons) {
 			btn.setOnClickListener(this);
 		}
-		
 	}
 
 	private void doMove(Button btn) {
