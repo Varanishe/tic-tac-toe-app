@@ -13,7 +13,8 @@ import android.widget.Button;
 public class Game extends Activity implements OnClickListener {
 
 	private static TicTacToeModel model = TicTacToeModel.getInstance();
-	private static TicTacToeController controller = TicTacToeController.getInstance();
+	private static TicTacToeController controller = TicTacToeController
+			.getInstance();
 
 	private Button[] buttons;
 
@@ -32,6 +33,7 @@ public class Game extends Activity implements OnClickListener {
 		for (Button btn : buttons) {
 			btn.setOnClickListener(this);
 		}
+		
 	}
 
 	private void doMove(Button btn) {
@@ -65,22 +67,20 @@ public class Game extends Activity implements OnClickListener {
 			break;
 		}
 	}
-	
+
 	private void newGame() {
 		model.newGame();
 		controller.refreshGame();
 	}
 
 	private void showAlertDialog(int status) {
-		new AlertDialog.Builder(this)
-			.setTitle(R.string.message_title)
-			.setMessage(status)
-			.setNeutralButton("Ok", 
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dlg, int sumthin) {
-						newGame();
-					}
-				}).show();
+		new AlertDialog.Builder(this).setTitle(R.string.message_title)
+				.setMessage(status).setNeutralButton("Ok",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dlg, int sumthin) {
+								newGame();
+							}
+						}).show();
 	}
 
 	@Override
