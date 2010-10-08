@@ -11,9 +11,12 @@
 	<string name="hard_label">Hard</string>
 	
 	<string name="message_title">Message</string>
+	<string name="question_title">Question</string>
+	
 	<string name="draw_game">Draw!</string>
 	<string name="nought_win_game">Nought win!</string>
 	<string name="cross_win_game">Cross win!</string>
+	<string name="restart_game">Restart Game?</string>
 	
 	<string name="about_label">About</string>
 	<string name="about_title">About Tic Tac Toe</string>

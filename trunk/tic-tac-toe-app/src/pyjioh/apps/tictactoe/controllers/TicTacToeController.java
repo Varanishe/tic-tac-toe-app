@@ -3,6 +3,7 @@ package pyjioh.apps.tictactoe.controllers;
 import pyjioh.apps.tictactoe.activities.R;
 import pyjioh.apps.tictactoe.models.TicTacToeModel;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class TicTacToeController {
 	
@@ -15,11 +16,13 @@ public class TicTacToeController {
 		if (instance == null)
 			instance = new TicTacToeController();
 		return instance;
-	}
+	} 
 
 	private static TicTacToeModel model = TicTacToeModel.getInstance();
 
 	private Button[] buttons;
+	private TextView humanScore;
+	private TextView droidScore;
 
 	private void drawButton(Button btn, int state) {
 		if ( TicTacToeModel.NOUGHT == state)
@@ -33,10 +36,17 @@ public class TicTacToeController {
 	public void refreshGame() {
 		for (int i = 0; i < buttons.length; i++)
 			drawButton(buttons[i], model.getGameField()[i / 3][i % 3]);
+		humanScore.setText(model.getHumanScore()+"");
+		droidScore.setText(model.getDroidScore()+"");
 	}
 
 	public void setButtons(Button[] buttons) {
 		this.buttons = buttons;
+	}
+
+	public void setScores(TextView humanScore, TextView droidScore) {
+		this.humanScore = humanScore;
+		this.droidScore = droidScore;
 	}
 
 }
