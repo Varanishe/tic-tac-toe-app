@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Game extends Activity implements OnClickListener {
 
@@ -33,6 +35,14 @@ public class Game extends Activity implements OnClickListener {
 		for (Button btn : buttons) {
 			btn.setOnClickListener(this);
 		}
+
+		findViewById(R.id.human_vs_droid).setOnClickListener(this);
+	}
+
+	private void injectionController() {
+		controller.setButtons(buttons);
+		controller.setScores((TextView) findViewById(R.id.human_score),
+				(TextView) findViewById(R.id.droid_score));
 	}
 
 	private void doMove(Button btn) {
@@ -67,7 +77,12 @@ public class Game extends Activity implements OnClickListener {
 		}
 	}
 
-	private void newGame() {
+	private void newRound() {
+		model.newRound();
+		controller.refreshGame();
+	}
+
+	private void newGame() { 
 		model.newGame();
 		controller.refreshGame();
 	}
@@ -77,9 +92,19 @@ public class Game extends Activity implements OnClickListener {
 				.setMessage(status).setNeutralButton("Ok",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dlg, int sumthin) {
-								newGame();
+								newRound();
 							}
 						}).show();
+	}
+
+	private void showRestartDialog() {
+		new AlertDialog.Builder(this).setTitle(R.string.question_title)
+				.setMessage(R.string.restart_game).setPositiveButton("Yes",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dlg, int sumthin) {
+								newGame();
+							}
+						}).setNegativeButton("No", null).show();
 	}
 
 	@Override
@@ -88,8 +113,8 @@ public class Game extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.game);
 		initListeners();
-		controller.setButtons(buttons);
-		newGame();
+		injectionController();
+		newRound();
 	}
 
 	public void onClick(View v) {
@@ -105,6 +130,8 @@ public class Game extends Activity implements OnClickListener {
 					showAlertDialog(R.string.cross_win_game);
 			}
 
+		} else if (v instanceof ImageView) {
+			showRestartDialog();
 		}
 	}
 

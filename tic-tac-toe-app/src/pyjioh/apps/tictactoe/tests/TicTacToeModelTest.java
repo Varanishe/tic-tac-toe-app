@@ -18,7 +18,7 @@ public class TicTacToeModelTest {
 	@Test
 	public void test_NewGame() { 
 		model.setDifficulty(TicTacToeModel.HARD_DIF);
-		model.newGame();
+		model.newRound();
 		assertTrue(TicTacToeModel.EMPTY == model.getWinner());
 		assertTrue(TicTacToeModel.STATE_NONE == model.getState());
 	}
@@ -26,7 +26,7 @@ public class TicTacToeModelTest {
 	@Test
 	public void test_HardDraw1() {
 		model.setDifficulty(TicTacToeModel.HARD_DIF);
-		model.newGame();
+		model.newRound();
 		model.doMove(0, 0);
 		model.doMove(0, 2);
 		model.doMove(2, 1);
@@ -38,7 +38,7 @@ public class TicTacToeModelTest {
 	@Test
 	public void test_HardDraw2() {
 		model.setDifficulty(TicTacToeModel.HARD_DIF);
-		model.newGame();
+		model.newRound();
 		model.doMove(2, 1);
 		model.doMove(2, 0);
 		model.doMove(0, 0);
@@ -50,7 +50,7 @@ public class TicTacToeModelTest {
 	@Test
 	public void test_HardDraw3() {
 		model.setDifficulty(TicTacToeModel.HARD_DIF);
-		model.newGame();
+		model.newRound();
 		model.doMove(2, 1);
 		model.doMove(2, 2);
 		model.doMove(0, 2);
@@ -62,7 +62,7 @@ public class TicTacToeModelTest {
 	@Test
 	public void test_HardLose1() {
 		model.setDifficulty(TicTacToeModel.HARD_DIF);
-		model.newGame();
+		model.newRound();
 		model.doMove(0, 0);
 		model.doMove(0, 1);
 		model.doMove(1, 0);
@@ -73,7 +73,7 @@ public class TicTacToeModelTest {
 	@Test
 	public void test_HardLose2() {
 		model.setDifficulty(TicTacToeModel.HARD_DIF);
-		model.newGame();
+		model.newRound();
 		model.doMove(2, 2);
 		model.doMove(0, 0);
 		model.doMove(2, 1);
@@ -84,7 +84,7 @@ public class TicTacToeModelTest {
 	@Test
 	public void test_HardLose3() {
 		model.setDifficulty(TicTacToeModel.HARD_DIF);
-		model.newGame();
+		model.newRound();
 		model.doMove(0, 2);
 		model.doMove(1, 2);
 		model.doMove(0, 0);

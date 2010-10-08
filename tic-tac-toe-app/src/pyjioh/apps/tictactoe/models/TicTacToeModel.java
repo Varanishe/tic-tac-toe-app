@@ -33,8 +33,11 @@ public class TicTacToeModel {
 	private int winner = EMPTY;
 	private int difficulty = HARD_DIF;
 
-	private void clear() {
-		for (int i = 0; i < 3; i++) {
+	private int humanScore;
+	private int droidScore;
+	
+	private void clearField() {
+		for (int i = 0; i < 3; i++) { 
 			Arrays.fill(gameField[i], EMPTY);
 		}
 		winner = EMPTY;
@@ -100,7 +103,7 @@ public class TicTacToeModel {
 		}
 		if (gameField[2][0] == element && gameField[2][1] == element && gameField[2][2] == EMPTY) {
 			gameField[2][2] = NOUGHT;
-			return true;
+			return true; 
 		}
 		
 		/* vertical 1st line*/
@@ -273,9 +276,11 @@ public class TicTacToeModel {
 		if (isWinner(NOUGHT)) {
 			state = STATE_WIN;
 			winner = NOUGHT;
+			droidScore++;
 		} else if (isWinner(CROSS)) {
 			state = STATE_WIN;
 			winner = CROSS;
+			humanScore++;
 		} else if (isDraw()) {
 			state = STATE_DRAW;
 			winner = EMPTY;
@@ -307,8 +312,8 @@ public class TicTacToeModel {
 		return gameField;
 	}
 
-	public void newGame() {
-		clear();
+	public void newRound() {
+		clearField();
 	}
 
 	public void setDifficulty(int difficulty) {
@@ -319,4 +324,18 @@ public class TicTacToeModel {
 		return difficulty;
 	}
 
+	public int getHumanScore() {
+		return humanScore;
+	}
+	
+	public int getDroidScore() {
+		return droidScore;
+	}
+	
+	public void newGame() {
+		humanScore = 0;
+		droidScore = 0;
+		clearField();
+	}
+	
 }
