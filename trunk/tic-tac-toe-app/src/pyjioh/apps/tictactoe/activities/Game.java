@@ -114,7 +114,7 @@ public class Game extends Activity implements OnClickListener {
 		setContentView(R.layout.game);
 		initListeners();
 		injectionController();
-		newRound();
+		controller.refreshGame();
 	}
 
 	public void onClick(View v) {
