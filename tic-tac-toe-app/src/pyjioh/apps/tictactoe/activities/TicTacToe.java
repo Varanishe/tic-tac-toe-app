@@ -1,5 +1,6 @@
 package pyjioh.apps.tictactoe.activities;
 
+import pyjioh.apps.tictactoe.models.TicTacToeModel;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +17,6 @@ public class TicTacToe extends Activity implements OnClickListener {
 		
 		View continueGameButton = findViewById(R.id.continue_button);
 		continueGameButton.setOnClickListener(this);
-		continueGameButton.setEnabled(false); // TODO
 		View newGameButton = findViewById(R.id.new_game_button);
 		newGameButton.setOnClickListener(this);
 		View optionsButton = findViewById(R.id.options_button);
@@ -31,6 +31,7 @@ public class TicTacToe extends Activity implements OnClickListener {
 			startActivity(new Intent(this, Game.class));
 			break;
 		case R.id.new_game_button: 
+			TicTacToeModel.getInstance().newGame();
 			startActivity(new Intent(this, Game.class));
 			break;
 		case R.id.options_button: 
