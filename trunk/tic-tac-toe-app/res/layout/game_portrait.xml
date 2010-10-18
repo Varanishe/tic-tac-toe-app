@@ -54,7 +54,7 @@
 			android:layout_height="wrap_content" android:layout_gravity="bottom" android:gravity="right" android:text="0" android:layout_marginRight="10dip" android:textColor="@color/text_human" android:textSize="78sp" android:layout_marginLeft="32dip">
 		</TextView>
 		<ImageView android:id="@+id/human_vs_droid"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/human_vs_droid">
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/human_vs_droid_112">
 		</ImageView>
 		<TextView android:id="@+id/droid_score" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:layout_gravity="bottom" android:text="0" android:layout_marginLeft="10dip" android:textColor="@color/text_droid" android:textSize="78sp">

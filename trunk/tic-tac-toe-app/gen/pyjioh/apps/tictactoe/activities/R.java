@@ -17,13 +17,14 @@ public final class R {
     }
     public static final class drawable {
         public static final int clear=0x7f020000;
-        public static final int human_vs_droid=0x7f020001;
-        public static final int icon=0x7f020002;
-        public static final int o_250=0x7f020003;
-        public static final int o_96=0x7f020004;
-        public static final int x_250=0x7f020005;
-        public static final int x_96=0x7f020006;
-        public static final int xo_250=0x7f020007;
+        public static final int human_vs_droid_112=0x7f020001;
+        public static final int human_vs_droid_96=0x7f020002;
+        public static final int icon=0x7f020003;
+        public static final int o_250=0x7f020004;
+        public static final int o_96=0x7f020005;
+        public static final int x_250=0x7f020006;
+        public static final int x_96=0x7f020007;
+        public static final int xo_250=0x7f020008;
     }
     public static final class id {
         public static final int about_button=0x7f060015;
@@ -31,32 +32,33 @@ public final class R {
         public static final int button_11=0x7f060003;
         public static final int button_12=0x7f060004;
         public static final int button_13=0x7f060005;
-        public static final int button_21=0x7f060007;
-        public static final int button_22=0x7f060008;
-        public static final int button_23=0x7f060009;
-        public static final int button_31=0x7f06000b;
-        public static final int button_32=0x7f06000c;
-        public static final int button_33=0x7f06000d;
+        public static final int button_21=0x7f060008;
+        public static final int button_22=0x7f060009;
+        public static final int button_23=0x7f06000a;
+        public static final int button_31=0x7f06000d;
+        public static final int button_32=0x7f06000e;
+        public static final int button_33=0x7f06000f;
         public static final int buttons=0x7f060001;
         public static final int continue_button=0x7f060012;
-        public static final int droid_score=0x7f060011;
+        public static final int droid_score=0x7f060010;
         public static final int easy_radiobutton=0x7f060016;
         public static final int hard_radiobutton=0x7f060018;
-        public static final int human_score=0x7f06000f;
-        public static final int human_vs_droid=0x7f060010;
+        public static final int human_score=0x7f060006;
+        public static final int human_vs_droid=0x7f06000b;
         public static final int medium_radiobutton=0x7f060017;
         public static final int new_game_button=0x7f060013;
         public static final int options_button=0x7f060014;
         public static final int row1=0x7f060002;
-        public static final int row2=0x7f060006;
-        public static final int row3=0x7f06000a;
-        public static final int row_bottom=0x7f06000e;
+        public static final int row2=0x7f060007;
+        public static final int row3=0x7f06000c;
+        public static final int row_bottom=0x7f060011;
     }
     public static final class layout {
         public static final int about=0x7f030000;
-        public static final int game=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int options=0x7f030003;
+        public static final int game_landscape=0x7f030001;
+        public static final int game_portrait=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int options=0x7f030004;
     }
     public static final class string {
         public static final int about_label=0x7f05000e;

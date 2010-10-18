@@ -19,6 +19,10 @@ public class Game extends Activity implements OnClickListener {
 			.getInstance();
 
 	private Button[] buttons;
+	
+	private boolean isPortrait() {
+		return getWindowManager().getDefaultDisplay().getOrientation() == 0;
+	}
 
 	private void initListeners() {
 		buttons = new Button[9];
@@ -111,12 +115,15 @@ public class Game extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.game);
+		if (isPortrait())
+			setContentView(R.layout.game_portrait);
+		else
+			setContentView(R.layout.game_landscape);
 		initListeners();
 		injectionController();
 		controller.refreshGame();
-	}
-
+	} 
+	
 	public void onClick(View v) {
 		if (v instanceof Button) {
 			doMove((Button) v);
