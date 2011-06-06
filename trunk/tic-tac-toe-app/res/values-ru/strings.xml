@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Tic Tac Toe</string>
+	<string name="main_title">Крестики-Нолики</string>
+	<string name="continue_label">Продолжить</string>
+	<string name="new_game_label">Новая игра</string>
+	
+	<string name="options_label">Опции</string>
+	<string name="easy_label">Легкий</string>
+	<string name="medium_label">Средний</string>
+	<string name="hard_label">Тяжелый</string>
+	
+	<string name="message_title">Сообщение</string>
+	<string name="question_title">Вопрос</string>
+	
+	<string name="draw_game">Ничья!</string>
+	<string name="nought_win_game">Нолики победили!</string>
+	<string name="cross_win_game">Крестики победили!</string>
+	<string name="restart_game">Начать заново?</string>
+	
+	<string name="about_label">О программе</string>
+	<string name="about_title">Об игре Крестики-Нолики</string>
+	<string name="about_text">Эта версия популярной игры <b>Крестики-Нолики</b> для андроида позволит вам протестировать свои навыки в игре против робота. Поставьте <b>Крестики</b> в целый ряд по горизонтали, вертикали или диагонали прежде чем робот поставит <b>Нолики</b> и вы выиграете.</string>
+</resources>
