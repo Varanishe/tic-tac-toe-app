@@ -1,5 +1,6 @@
 package pyjioh.apps.tictactoe.activities;
 
+import pyjioh.apps.tictactoe.R;
 import pyjioh.apps.tictactoe.models.TicTacToeModel;
 import android.app.Activity;
 import android.content.Intent;

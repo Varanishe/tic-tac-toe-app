@@ -1,7 +1,6 @@
 package pyjioh.apps.tictactoe.activities;
 
-import pyjioh.apps.tictactoe.activities.R;
-
+import pyjioh.apps.tictactoe.R;
 import android.app.Activity;
 import android.os.Bundle;
 

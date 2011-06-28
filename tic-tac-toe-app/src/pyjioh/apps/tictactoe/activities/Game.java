@@ -1,5 +1,6 @@
 package pyjioh.apps.tictactoe.activities;
 
+import pyjioh.apps.tictactoe.R;
 import pyjioh.apps.tictactoe.controllers.TicTacToeController;
 import pyjioh.apps.tictactoe.models.TicTacToeModel;
 import android.app.Activity;
@@ -20,10 +21,6 @@ public class Game extends Activity implements OnClickListener {
 
 	private Button[] buttons;
 	
-	private boolean isPortrait() {
-		return getWindowManager().getDefaultDisplay().getOrientation() == 0;
-	}
-
 	private void initListeners() {
 		buttons = new Button[9];
 		buttons[0] = (Button) findViewById(R.id.button_11);
@@ -115,10 +112,7 @@ public class Game extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		if (isPortrait())
-			setContentView(R.layout.game_portrait);
-		else
-			setContentView(R.layout.game_landscape);
+		setContentView(R.layout.game);
 		initListeners();
 		injectionController();
 		controller.refreshGame();
