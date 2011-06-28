@@ -8,7 +8,7 @@
  ! Visit http://www.pragmaticprogrammer.com/titles/eband2 for more book information.
 -->
 <resources>
-   <color name="background">#002761</color>
+   <color name="background">#292b4f</color>
    <color name="text_droid">#ffd4f5</color>
    <color name="text_human">#d4daff</color>
 </resources>

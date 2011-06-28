@@ -1,6 +1,6 @@
 package pyjioh.apps.tictactoe.controllers;
 
-import pyjioh.apps.tictactoe.activities.R;
+import pyjioh.apps.tictactoe.R;
 import pyjioh.apps.tictactoe.models.TicTacToeModel;
 import android.widget.Button;
 import android.widget.TextView;
