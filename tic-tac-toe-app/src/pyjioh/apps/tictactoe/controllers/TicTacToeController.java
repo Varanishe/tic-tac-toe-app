@@ -26,9 +26,9 @@ public class TicTacToeController {
 
 	private void drawButton(Button btn, int state) {
 		if ( TicTacToeModel.NOUGHT == state)
-			btn.setBackgroundResource(R.drawable.o_96);
+			btn.setBackgroundResource(R.drawable.o);
 		else if (TicTacToeModel.CROSS == state)
-			btn.setBackgroundResource(R.drawable.x_96);
+			btn.setBackgroundResource(R.drawable.x);
 		else
 			btn.setBackgroundResource(R.drawable.clear);
 	}
